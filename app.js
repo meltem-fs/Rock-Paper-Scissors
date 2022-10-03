@@ -3,15 +3,15 @@ const close = document.querySelector(".close")
 const img = document.querySelector(".images")
 const choosen = document.querySelector(".choosen")
 
-const img_sel = {
-  rock: "./images/icon-rock.svg",
-  paper: "./images/icon-paper.svg",
-  scissors: "./images/icon-scissors.svg",
+const img1 = {
+  rock: `<img class="rock" src="./images/icon-rock.svg" alt="">`,
+  paper: `<img class="paper" src="./images/icon-paper.svg" alt="">`,
+  scissors: `<img class="scissors" src="./images/icon-scissors.svg" alt="">`,
 };
 
 let SCORE = 0;
 
-
+let left;
 
 rules.addEventListener("click",() => {
     document.querySelector(".secret").style.display = "inline";
@@ -35,36 +35,45 @@ img.addEventListener("click",(e)=> {
       choosen.style.display = "none";
     }
     if(e.target.classList =="paper"){
+        left = "paper"
         document.querySelector(
           ".selected_img"
         ).innerHTML = `<img class="paper" src="./images/icon-paper.svg" alt="">`;
     }
     if(e.target.classList =="scissors"){
+        left = "scissors";
         document.querySelector(
           ".selected_img"
         ).innerHTML = `<img class="scissors" src="./images/icon-scissors.svg" alt="">`;
     }
     if(e.target.classList =="rock"){
+      left = "rock";
         document.querySelector(
           ".selected_img"
         ).innerHTML = ` <img class="rock" src="./images/icon-rock.svg" alt="">`;
     }
     // setTimeout(pc, 1000);
-    pc()
+    pc(left)
     
+     
     
 })
 
+
 const pc = (left) => {
-    let img_sel = ["paper","scissors","rock" ];
-    // let img_sel = [
-    //   `<img class="paper" src="./images/icon-paper.svg" alt="">`,
-    //   `<img class="scissors" src="./images/icon-scissors.svg" alt="">`,
-    //   ` <img class="rock" src="./images/icon-rock.svg" alt="">`,
-    // ];
-     let right = img_sel[Math.round(Math.random() * 2)];
-    document.querySelector(".space").innerHTML = `img_sel[right]`;
+    let img2 = ["paper","scissors","rock" ];
+    let img_sel = [
+      `<img class="paper" src="./images/icon-paper.svg" alt="">`,
+      `<img class="scissors" src="./images/icon-scissors.svg" alt="">`,
+      ` <img class="rock" src="./images/icon-rock.svg" alt="">`,
+    ];
+    let random = Math.round(Math.random() * 2);
+     let right_img = img_sel[random];
+     let right = img2[random];
+    document.querySelector(".space").innerHTML = `${right_img}`;
     result(left, right);
+   console.log(left);
+    console.log(right);
     
 }
 const result = (left,right) => {
@@ -101,8 +110,7 @@ if (left == "scissors" && right == "paper") {
 }
 
 const setDecision = (decision) => {
-    console.log("dfdsf");
-  document.querySelector(".result h1").innerText = decision;
+  document.querySelector(".win").innerText = decision;
 };
 
 const setScore = (newScore) => {
