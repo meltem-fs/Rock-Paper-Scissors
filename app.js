@@ -3,11 +3,6 @@ const close = document.querySelector(".close")
 const img = document.querySelector(".images")
 const choosen = document.querySelector(".choosen")
 
-const img1 = {
-  rock: `<img class="rock" src="./images/icon-rock.svg" alt="">`,
-  paper: `<img class="paper" src="./images/icon-paper.svg" alt="">`,
-  scissors: `<img class="scissors" src="./images/icon-scissors.svg" alt="">`,
-};
 
 let SCORE = 0;
 
