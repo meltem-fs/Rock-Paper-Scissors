@@ -38,7 +38,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(41,33,189,1) 0%, rgba
 .scissors{
     left: 19rem;
     background-color: white;
-    padding: 1.2rem;
+    padding: 1.2rem 1.6rem;
     border-radius: 50%;
     outline: 15px solid hsl(39, 89%, 49%)
 }
@@ -46,7 +46,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(41,33,189,1) 0%, rgba
      left: 12.5rem;
      top: 12rem;
     background-color: white;
-    padding: 1.2rem;
+    padding: 1.5rem 1.6rem;
     border-radius: 50%;
     outline: 15px solid hsl(349, 71%, 52%)
 }
@@ -146,7 +146,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(41,33,189,1) 0%, rgba
 }
 
 .space{
-    background-color: rgb(2, 2, 48);
+    background-color: rgb(36, 36, 85);
     width: 7rem;
     height: 7rem;
     border-radius: 50%;
@@ -155,4 +155,12 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(41,33,189,1) 0%, rgba
 .imgs{
     display: flex;
     justify-content: space-between;
+}
+
+.btn{
+    margin-top: 1rem;
+    padding:0.7rem 1.5rem;
+    border-radius: 10px;
+    color: red;
+    cursor: pointer;
 }
